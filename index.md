@@ -1,37 +1,45 @@
-## Welcome to GitHub Pages
+## Project 2
 
-You can use the [editor on GitHub](https://github.com/grantnelson53/cit281-project2/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+In this project, we learned some advanced JavaScript functions
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### Source Code
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+     const getRandomInteger = function getRandomInteger(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
-```markdown
-Syntax highlighted code block
+    // Returns a single random lowercase letter
+    const getRandomLetter = function getRandomLetter() {
+        const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+        let result = alphabet[getRandomInteger(0,25)];
 
-# Header 1
-## Header 2
-### Header 3
+        return result;
+    }
 
-- Bulleted
-- List
+    const getSetRandomString = function getSetRandomString () {
+        let result = "";
 
-1. Numbered
-2. List
+        for (let i = 0; i < getRandomInteger(5, 26); i++) {
+        result += getRandomLetter();
+        }
 
-**Bold** and _Italic_ and `Code` text
+        return result;
+    }
 
-[Link](url) and ![Image](src)
-```
+    const getRandomString = function getRandomString(minLength, maxLength){
+        let result = "";
+        for (let i = 0; i < getRandomInteger(minLength, maxLength); i++) {
+        result += getRandomLetter();
+        }
+        return result;
+    }
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+    //Function that inputs a string, splits it into an array, sorts the array, and joins it back into a string. Returns sorted string
+    const getSortedString = (string) => {let s = string.split(""); s.sort(); let joined = s.join(''); return joined;}
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/grantnelson53/cit281-project2/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+    console.log(getSortedString("grant"));
+    console.log(getRandomString(10,20));
 
-### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
